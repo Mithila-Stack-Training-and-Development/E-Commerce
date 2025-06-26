@@ -11,7 +11,7 @@ This project is a full-featured e-commerce website built using the MERN stack (M
 - Responsive design for mobile and desktop
 
 ## Tech Stack
-- **Frontend:** React.js, Redux, Bootstrap/Material-UI
+- **Frontend:** React.js, 
 - **Backend:** Node.js, Express.js
 - **Database:** MongoDB (Mongoose ODM)
 - **Authentication:** JWT, bcrypt

@@ -1,19 +1,18 @@
 # E-Commerce Backend (Node.js/Express)
 
 ## 1. Project Overview
-This is the backend API for an e-commerce platform built with Node.js, Express, and MongoDB. It provides user authentication, product management, and supports admin/user roles for secure operations.
+This is the backend API for an e-commerce platform built with Node.js, Express, and MongoDB. It provides user authentication, product management, cart functionality, and supports admin/user roles for secure operations.
 
 ---
 
 ## 2. Folder Structure
 ```
 Backend/
-├── config/           # Database connection config
-│   └── db.js
+├── config/           # Database connection config (db.js)
 ├── data/             # Sample data for seeding
 ├── middleware/       # Custom middleware (auth, admin)
-├── models/           # Mongoose schemas (User, Product)
-├── routes/           # Express route handlers (userRoutes, productRoutes)
+├── models/           # Mongoose schemas (User, Product, Cart)
+├── routes/           # Express route handlers (userRoutes, productRoutes, cartRoutes)
 ├── seeder.js         # Script to seed database
 ├── server.js         # Entry point for Express server
 ├── .env              # Environment variables (not committed)
@@ -79,6 +78,33 @@ Backend/
   - Params: `id`
   - Success: `200`, `[products]`
 
+### Cart Routes (`/api/cart`)
+- **POST /** – Add product to cart (guest or user)
+  - Body: `{ productId, quantity, size, color, guestId, userId }`
+  - Success: `201` (new cart), `200` (updated cart), `{ cart }`
+  - Errors: `404` (product/cart not found), `500`
+
+- **PUT /** – Update product quantity in cart
+  - Body: `{ productId, quantity, size, color, guestId, userId }`
+  - Success: `200`, `{ cart }`
+  - Errors: `404` (cart/product not found), `500`
+
+- **DELETE /** – Remove product from cart
+  - Body: `{ productId, size, color, guestId, userId }`
+  - Success: `200`, `{ cart }`
+  - Errors: `404` (cart/product not found), `500`
+
+- **GET /** – Get cart for user or guest
+  - Query: `{ userId, guestId }`
+  - Success: `200`, `{ cart }`
+  - Errors: `404` (cart not found), `500`
+
+- **POST /merge** – Merge guest cart into user cart on login (JWT required)
+  - Body: `{ guestId }`
+  - Header: `Authorization: Bearer <token>`
+  - Success: `200`, `{ cart }`
+  - Errors: `400`, `404`, `500`
+
 ---
 
 ## 4. Environment Variables
@@ -91,7 +117,10 @@ Backend/
 ## 5. Database Schema
 - **User**: name, email, password (hashed), role (customer/admin), timestamps
 - **Product**: name, description, price, discountPrice, countInStock, sku, category, brand, sizes, colors, collections, material, gender, images, isFeatured, isPublished, rating, numReview, tags, user (ref: User), SEO/meta fields, dimensions, weight, timestamps
-- **Relationships**: Each product references the user (admin) who created it
+- **Cart**: user (ref: User), guestId, products (array of cart items: productId, name, image, price, size, color, quantity), totalPrice, timestamps
+- **Relationships**:
+  - Each product references the user (admin) who created it
+  - Each cart references a user or guestId and contains product references
 
 ---
 
@@ -102,6 +131,7 @@ Backend/
 - On login/register, a JWT is returned
 - Protected routes require `Authorization: Bearer <token>` header
 - Admin routes require user with `role: admin`
+- Cart supports both guest and authenticated users; merging is handled on login
 
 ---
 

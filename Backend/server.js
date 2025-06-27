@@ -4,6 +4,7 @@ const dotenv = require("dotenv");
 const connectDB = require("./config/db.js");
 const userRoutes = require("./routes/userRoutes.js");
 const productRoutes = require("./routes/productRoutes.js");
+const cartRoutes = require("./routes/cartRoutes.js");
 
 const app = express();
 app.use(express.json());
@@ -17,12 +18,13 @@ connectDB();
 
 
 app.get("/", (req,res) => {
-    res.send("Welcome to Rabbit API");
+    res.send("Welcome to E-com API");
 });
 
 //API Routes 
 app.use("/api/users", userRoutes);
 app.use("/api/products", productRoutes);
+app.use("/api/cart", cartRoutes);
 
 
 app.listen(PORT, () => {

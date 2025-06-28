@@ -1,7 +1,7 @@
 # E-Commerce Backend (Node.js/Express)
 
 ## 1. Project Overview
-This is the backend API for an e-commerce platform built with Node.js, Express, and MongoDB. It provides user authentication, product management, cart functionality, and supports admin/user roles for secure operations.
+This is the backend API for an e-commerce platform built with Node.js, Express, and MongoDB. It provides user authentication, product management, cart, checkout, and order functionality, supporting both admin and user roles for secure operations.
 
 ---
 
@@ -11,8 +11,8 @@ Backend/
 ├── config/           # Database connection config (db.js)
 ├── data/             # Sample data for seeding
 ├── middleware/       # Custom middleware (auth, admin)
-├── models/           # Mongoose schemas (User, Product, Cart)
-├── routes/           # Express route handlers (userRoutes, productRoutes, cartRoutes)
+├── models/           # Mongoose schemas (User, Product, Cart, Checkout, Order)
+├── routes/           # Express route handlers (userRoutes, productRoutes, cartRoutes, checkoutRoutes, orderRoutes)
 ├── seeder.js         # Script to seed database
 ├── server.js         # Entry point for Express server
 ├── .env              # Environment variables (not committed)
@@ -105,6 +105,38 @@ Backend/
   - Success: `200`, `{ cart }`
   - Errors: `400`, `404`, `500`
 
+### Checkout Routes (`/api/checkout`)
+- **POST /** – Create a new checkout session (JWT required)
+  - Body: `{ shippingAddress, paymentMethod }`
+  - Header: `Authorization: Bearer <token>`
+  - Success: `201`, `{ session }`
+  - Errors: `400`, `401`, `500`
+
+- **PUT /:id/pay** – Mark checkout as paid (JWT required)
+  - Params: `id`
+  - Body: `{ paymentDetails }`
+  - Header: `Authorization: Bearer <token>`
+  - Success: `200`, `{ checkout }`
+  - Errors: `400`, `401`, `404`, `500`
+
+- **POST /:id/finalize** – Finalize checkout and create order (JWT required)
+  - Params: `id`
+  - Header: `Authorization: Bearer <token>`
+  - Success: `200`, `{ order }`
+  - Errors: `400`, `401`, `404`, `500`
+
+### Order Routes (`/api/orders`)
+- **GET /my-orders** – Get logged-in user's orders (JWT required)
+  - Header: `Authorization: Bearer <token>`
+  - Success: `200`, `[orders]`
+  - Errors: `401` (unauthorized)
+
+- **GET /:id** – Get order details by ID (JWT required)
+  - Params: `id`
+  - Header: `Authorization: Bearer <token>`
+  - Success: `200`, `{ order }`
+  - Errors: `400`, `401`, `404`, `500`
+
 ---
 
 ## 4. Environment Variables
@@ -118,11 +150,16 @@ Backend/
 - **User**: name, email, password (hashed), role (customer/admin), timestamps
 - **Product**: name, description, price, discountPrice, countInStock, sku, category, brand, sizes, colors, collections, material, gender, images, isFeatured, isPublished, rating, numReview, tags, user (ref: User), SEO/meta fields, dimensions, weight, timestamps
 - **Cart**: user (ref: User), guestId, products (array of cart items: productId, name, image, price, size, color, quantity), totalPrice, timestamps
+- **Checkout**: user (ref: User), checkoutItems, shippingAddress, paymentMethod, totalPrice, isPaid, paidAt, paymentStatus, paymentDetails, isFinalized, finalizedAt, timestamps
+- **Order**: user (ref: User), orderItems, shippingAddress, paymentMethod, totalPrice, isPaid, paidAt, isDelivered, deliveredAt, paymentStatus, status, timestamps
 - **Relationships**:
   - Each product references the user (admin) who created it
   - Each cart references a user or guestId and contains product references
+  - Checkout and Order reference user and contain product/order item details
 
 ---
+
+
 
 
 
@@ -132,6 +169,7 @@ Backend/
 - Protected routes require `Authorization: Bearer <token>` header
 - Admin routes require user with `role: admin`
 - Cart supports both guest and authenticated users; merging is handled on login
+- Checkout and order routes require authentication
 
 ---
 

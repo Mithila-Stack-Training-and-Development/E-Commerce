@@ -1,7 +1,7 @@
 # E-Commerce Backend (Node.js/Express)
 
 ## 1. Project Overview
-This is the backend API for an e-commerce platform built with Node.js, Express, and MongoDB. It provides user authentication, product management, cart, checkout, order, newsletter subscription, and image upload functionality, supporting both admin and user roles for secure operations.
+This is the backend API for an e-commerce platform built with Node.js, Express, and MongoDB. It provides user authentication, product management, cart, checkout, order, newsletter subscription, image upload, and full admin management for users, products, and orders.
 
 ---
 
@@ -12,7 +12,7 @@ Backend/
 ├── data/             # Sample data for seeding
 ├── middleware/       # Custom middleware (auth, admin)
 ├── models/           # Mongoose schemas (User, Product, Cart, Checkout, Order, Subscriber)
-├── routes/           # Express route handlers (userRoutes, productRoutes, cartRoutes, checkoutRoutes, orderRoutes, subscriberRoutes, uploadRoutes)
+├── routes/           # Express route handlers (userRoutes, productRoutes, cartRoutes, checkoutRoutes, orderRoutes, subscriberRoutes, uploadRoutes, adminRoutes, productAdminRoutes, adminOrderRoutes)
 ├── seeder.js         # Script to seed database
 ├── server.js         # Entry point for Express server
 ├── .env              # Environment variables (not committed)
@@ -149,6 +149,56 @@ Backend/
   - Success: `200`, `{ imageUrl }`
   - Errors: `400` (no file), `500`
 
+### Admin User Management (`/api/admin/users`)
+- **GET /** – Get all users (Admin only)
+  - Header: `Authorization: Bearer <admin token>`
+  - Success: `200`, `[users]`
+  - Errors: `401`, `403`, `500`
+
+- **POST /** – Add a new user (Admin only)
+  - Body: `{ name, email, password, role }`
+  - Header: `Authorization: Bearer <admin token>`
+  - Success: `201`, `{ user }`
+  - Errors: `400` (exists), `401`, `403`, `500`
+
+- **PUT /:id** – Update user info (Admin only)
+  - Params: `id`
+  - Body: `{ name, email, password, role }`
+  - Header: `Authorization: Bearer <admin token>`
+  - Success: `200`, `{ user }`
+  - Errors: `404`, `401`, `403`, `500`
+
+- **DELETE /:id** – Delete a user (Admin only)
+  - Params: `id`
+  - Header: `Authorization: Bearer <admin token>`
+  - Success: `200`, `{ message }`
+  - Errors: `404`, `401`, `403`, `500`
+
+### Admin Product Management (`/api/admin/products`)
+- **GET /** – Get all products (Admin only)
+  - Header: `Authorization: Bearer <admin token>`
+  - Success: `200`, `[products]`
+  - Errors: `401`, `403`, `500`
+
+### Admin Order Management (`/api/admin/orders`)
+- **GET /** – Get all orders (Admin only)
+  - Header: `Authorization: Bearer <admin token>`
+  - Success: `200`, `[orders]`
+  - Errors: `401`, `403`, `500`
+
+- **PUT /:id** – Update order status (Admin only)
+  - Params: `id`
+  - Body: `{ status }`
+  - Header: `Authorization: Bearer <admin token>`
+  - Success: `200`, `{ order }`
+  - Errors: `400`, `401`, `403`, `404`, `500`
+
+- **DELETE /:id** – Delete an order (Admin only)
+  - Params: `id`
+  - Header: `Authorization: Bearer <admin token>`
+  - Success: `200`, `{ message }`
+  - Errors: `404`, `401`, `403`, `500`
+
 ---
 
 ## 4. Environment Variables
@@ -173,28 +223,6 @@ Backend/
 
 ---
 
-## 6. Setup Instructions
-1. Clone the repo:
-   ```bash
-   git clone <repo-url>
-   cd E-COMMERCE/Backend
-   ```
-2. Install dependencies:
-   ```bash
-   npm install
-   ```
-3. Create a `.env` file with your variables (see above)
-4. Run MongoDB locally or use MongoDB Atlas
-5. Start the server (dev):
-   ```bash
-   npm run dev
-   ```
-6. (Optional) Seed data:
-   ```bash
-   node seeder.js
-   ```
-
----
 
 ## 7. Authentication
 - Uses **JWT (JSON Web Token)** for stateless authentication

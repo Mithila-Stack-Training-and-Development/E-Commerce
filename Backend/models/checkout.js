@@ -3,7 +3,7 @@ const mongoose = require("mongoose");
 const checkoutItemSchema = new mongoose.Schema({
     productId: {
         type: mongoose.Schema.Types.ObjectId,
-        ref: "Prodduct",
+        ref: "Product",
         required: true,
     },
     name: {

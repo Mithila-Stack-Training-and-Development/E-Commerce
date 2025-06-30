@@ -209,7 +209,7 @@ if(size){
 }
 
 if(color){
-    query.color = { $in: [color]};
+    query.colors = { $in: [color]};
 }
 
 if(gender){
@@ -266,7 +266,7 @@ res.json(products);
 
 router.get("/best-seller", async(req,res) => {
     try {
-        const bestSeller = await Product.findOne().sort({ rating: -1});
+        const bestSeller = await Product.findOne().sort({ rating: -1}); //sorts by rating in descending order.
 
         if(bestSeller){
             res.json(bestSeller);
@@ -291,7 +291,7 @@ router.get("/new-arrivals", async(req,res) => {
         // ftech latest 8 products
 
         const newArrivals = await Product.find().sort({createdAt: -1}).limit(8);
-        res.json(newArrivals);
+        res.json(newArrivals);//fetch the most recently created products. & return only the latest 8 products.
 
         
     } catch (error) {

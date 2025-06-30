@@ -1,7 +1,13 @@
 # E-Commerce Backend (Node.js/Express)
 
 ## 1. Project Overview
-This is the backend API for an e-commerce platform built with Node.js, Express, and MongoDB. It provides user authentication, product management, cart, checkout, order, newsletter subscription, image upload, and full admin management for users, products, and orders.
+This is the backend API for an e-commerce platform built with Node.js, Express, and MongoDB. It provides user authentication, product management, cart, checkout, order, newsletter subscription, image upload, and full admin management for users, products, and order.
+
+### 🧱 Backend Architecture
+
+[Click here to view the backend architecture diagram on Eraser.io](https://app.eraser.io/workspace/qpiCu3NNWf00s2gCLfSw?origin=share)
+
+
 
 ---
 

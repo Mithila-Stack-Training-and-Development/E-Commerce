@@ -33,3 +33,11 @@ E-COMMERCE/
 ```
 
 
+### 🧱 Backend Architecture
+
+[Click here to view the backend architecture diagram on Eraser.io](https://app.eraser.io/workspace/qpiCu3NNWf00s2gCLfSw?origin=share)
+
+
+
+
+

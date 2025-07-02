@@ -8,8 +8,13 @@ import Register from "./pages/Register";
 import Profile from "./pages/Profile";
 import CollectionPage from "./pages/CollectionPage";
 
+
+import { Provider } from "react-redux";
+import store from "./redux/store"
+
 const App = () => {
 	return (
+		<Provider store={store}>
 		<BrowserRouter
 			future={{ v7_startTransition: true, v7_relativeSplatPath: true }}
 		>
@@ -26,6 +31,7 @@ const App = () => {
 				<Route>{/* Admin Layout */}</Route>
 			</Routes>
 		</BrowserRouter>
+		</Provider>
 	);
 };
 

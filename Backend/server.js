@@ -23,6 +23,9 @@ const PORT = process.env.PORT || 3000;
 //Connect TO mongoDB
 connectDB();
 
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+
 
 app.get("/", (req,res) => {
     res.send("Welcome to E-com API");

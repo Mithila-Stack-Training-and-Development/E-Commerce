@@ -1,4 +1,5 @@
 import { useSearchParams } from "react-router-dom";
+import { useState } from "react";
 
 
 const FilterSidebar = () => {
@@ -17,3 +18,5 @@ const FilterSidebar = () => {
 };
 
 export default FilterSidebar;
+
+

@@ -7,6 +7,17 @@ import Login from "./pages/Login";
 import Register from "./pages/Register";
 import Profile from "./pages/Profile";
 import CollectionPage from "./pages/CollectionPage";
+import ProductDetails from "./Components/Products/ProductDetails";
+import Checkout from "./Components/Cart/Checkout";
+import OrderConfirmationPage from "./pages/OrderConformationPage";
+import OrderDetailsPage from "./pages/OrderDetailsPage";
+import MyOrdersPage from "./pages/MyOrdersPage";
+import AdminLayout from "./Components/Admin/AdminLayout";
+import AdminHomepage from "./pages/AdminHomepage";
+import UserManagement from "./Components/Admin/UserManagement";
+import ProductManagement from "./Components/Admin/ProductManagement";
+import EditProductPage from "./Components/Admin/EditProductPage";
+import OrderManagement from "./Components/Admin/OrderManagement";
 
 const App = () => {
 	return (
@@ -22,8 +33,19 @@ const App = () => {
 					<Route path="register" element={<Register />} />
 					<Route path="profile" element={<Profile />} />
 					<Route path="/collections/:collection" element={<CollectionPage/>} />
+					<Route path="product/:id" element={<ProductDetails />} />
+					<Route path="checkout" element={<Checkout />} />
+					<Route path="order-confirmation" element={<OrderConfirmationPage />} />
+					<Route path="order/:id" element={<OrderDetailsPage />}	/>
+					<Route path="my-orders" element={<MyOrdersPage />} />
 				</Route>
-				<Route>{/* Admin Layout */}</Route>
+				<Route path="/admin" element={<AdminLayout />}>
+					<Route index element={<AdminHomepage />} />
+					<Route path="users" element={<UserManagement />} />
+					<Route path="products" element={<ProductManagement />} />
+					<Route path="products/:id/edit" element={<EditProductPage />} />
+					<Route path="orders" element={<OrderManagement />} />
+				</Route>
 			</Routes>
 		</BrowserRouter>
 	);

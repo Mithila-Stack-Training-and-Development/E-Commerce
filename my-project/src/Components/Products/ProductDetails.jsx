@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { toast } from "sonner";
 import ProductGrid from "./ProductGrid";
 
+
 const selectedProduct = {
 	name: "Stylish Jacket",
 	price: 120,
@@ -55,14 +56,17 @@ const similarProducts = [
 
 
 const ProductDetails = () => {
-	const [mainImage, setMainImage] = useState("");
+	const [mainImage, setMainImage] = useState(
+		selectedProduct.images?.[0]?.url || "https://picsum.photos/500/500?random=1"
+	);
 	const [selectedSize, setSelectedSize] = useState("");
-	const [selectedColor, setSelectedColor] = useState("");
-	const [quantity, setQuantity] = useState("");
-	const [isButtonDisabled, setIsButtonDisabled] = useState(false);
 
+	const [selectedColor, setSelectedColor] = useState("");
+	const [quantity, setQuantity] = useState(1);
+	const [isButtonDisabled, setIsButtonDisabled] = useState(false);
+	
 	useEffect(() => {
-		if (selectedProduct?.images?.lenghth > 0) {
+		if (selectedProduct?.images?.length > 0) {
 			setMainImage(selectedProduct.images[0].url);
 		}
 	}, [selectedProduct]);
@@ -88,6 +92,7 @@ const ProductDetails = () => {
 		}, 500);
 	};
 
+	
 	return (
 		<div className="p-6">
 			<div className="max-w-6xl mx-auto bg-white p-8 rounded-lg">
@@ -111,8 +116,9 @@ const ProductDetails = () => {
 						<div className="mb-4">
 							<img
 								src={mainImage}
-								// src={selectedProduct.images[0]?.url}
+								
 								alt="Main Product"
+
 								className="w-full h-auto object-cover rounded-lg"
 							/>
 						</div>
@@ -129,7 +135,7 @@ const ProductDetails = () => {
 								}`}
 								onClick={() => setMainImage(image.url)}
 							/>
-						))}
+						))}	
 					</div>
 					{/* Right Side */}
 					<div className="md:w-1/2 md:ml-10">
@@ -148,7 +154,7 @@ const ProductDetails = () => {
 
 						<div className="mb-4">
 							<p className="text-gray-700">Color:</p>
-							<div className="flex-gap-2 mt-2">
+							<div className="flex gap-2 mt-2">
 								{selectedProduct.colors.map((color) => (
 									<button
 										key={color}
@@ -168,8 +174,8 @@ const ProductDetails = () => {
 						</div>
 
 						<div className="mb-4">
-							<p className="tect-gray-700">Size:</p>
-							<div className="flex-gap-2 mt-2">
+							<p className="text-gray-700">Size:</p>
+							<div className="flex gap-2 mt-2">
 								{selectedProduct.size.map((size) => (
 									<button
 										key={size}

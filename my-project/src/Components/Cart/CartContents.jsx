@@ -1,4 +1,4 @@
-import React from "react";
+
 import {RiDeleteBin3Line} from "react-icons/ri";
 const CartContents = () => {
 	const cartProducts = [
@@ -14,7 +14,7 @@ const CartContents = () => {
 		{
 			productId: 2,
 			name: "Jeans",
-			size: "l",
+			size: "L",
 			color: "Blue",
 			quantity: 1,
 			price: 25,

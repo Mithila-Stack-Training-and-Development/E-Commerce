@@ -8,6 +8,8 @@ const CollectionPage = () => {
 	const [products, setProducts] = useState([]);
 	const sidebarRef = useRef(null);
 	const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+	
+	
 
 	const toggleSidebar = () => {
 		setIsSidebarOpen(!isSidebarOpen);
@@ -24,12 +26,16 @@ const CollectionPage = () => {
 		// Add event listner for clicks
 		document.addEventListener("mousedown", handleClickOutside);
 		// clean event listener
-		document.removeEventListener("mousedown", handleClickOutside);
+		return () => {
+			// Remove event listener on cleanup
+			document.removeEventListener("mousedown", handleClickOutside);
+		};
+		// document.removeEventListener("mousedown", handleClickOutside);
 	});
 
 	useEffect(() => {
 		setTimeout(() => {
-			const fetchProducts = [
+			const fetchedProducts = [
 				{
 					_id: 1,
 					name: "Product 1",
@@ -98,7 +104,7 @@ const CollectionPage = () => {
 				ref={sidebarRef}
 				className={`${
 					isSidebarOpen ? "translate-x-0" : "-translate-x-full"
-				    } fixed inset-y-0 z-50 left-0 w-64 bg-white ovrflow-y-auto 
+				    } fixed inset-y-0 z-50 left-0 w-64 bg-white overflow-y-auto 
                     transition transform duration-300 lg:static lg:translate-x-0`
                 }
 			>

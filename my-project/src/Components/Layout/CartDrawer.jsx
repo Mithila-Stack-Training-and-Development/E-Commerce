@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 import { useState } from "react";
+=======
+// import { useState } from "react";
+>>>>>>> 31de50673ff559940649b81c31fb78d694bd6e9d
 import { IoMdClose } from "react-icons/io";
 import CartContents from "../Cart/CartContents";
 import { useNavigate } from "react-router-dom";
@@ -30,12 +34,25 @@ const CartDrawer = ({ drawerOpen, toggleCartDrawer }) => {
 
 			{/* Checkout button fixed at the bottom */}
 			<div className="p-4 bg-white sticky bottom-0">
+<<<<<<< HEAD
 				<button
 					onClick={handleCheckout}
 					className="w-full bg-black text-white py-3 rounded-lg font-semibold hover:bg-gray-800 transition"
+=======
+				{/* <button
+					className="w-full bg-black text-white py-3 rounded-lg font-semibold hover:bg-gray-800"
+                    transition duration-300
+>>>>>>> 31de50673ff559940649b81c31fb78d694bd6e9d
 				>
 					Checkout
-				</button>
+				</button> */}
+
+				<button
+	className="w-full bg-black text-white py-3 rounded-lg font-semibold hover:bg-gray-800 transition duration-300"
+>
+	Checkout
+</button>
+
 				<p className="text-sm tracking-tighter text-gray-500 mt-2 text-center">
 					Shipping, taxes, and discount codes calculated at checkout.
 				</p>

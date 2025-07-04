@@ -19,8 +19,13 @@ import ProductManagement from "./Components/Admin/ProductManagement";
 import EditProductPage from "./Components/Admin/EditProductPage";
 import OrderManagement from "./Components/Admin/OrderManagement";
 
+
+import { Provider } from "react-redux";
+import store from "./redux/store"
+
 const App = () => {
 	return (
+		<Provider store={store}>
 		<BrowserRouter
 			future={{ v7_startTransition: true, v7_relativeSplatPath: true }}
 		>
@@ -48,6 +53,7 @@ const App = () => {
 				</Route>
 			</Routes>
 		</BrowserRouter>
+		</Provider>
 	);
 };
 

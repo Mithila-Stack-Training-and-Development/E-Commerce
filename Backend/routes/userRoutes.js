@@ -10,6 +10,8 @@ const router = express.Router();
 //@access Public
 
 router.post("/register", async(req,res) => {
+    console.log("Register Request Body:", req.body); // 🔍 DEBUG
+
     const {name, email, password} = req.body;
 
     try{
@@ -64,6 +66,7 @@ router.post("/register", async(req,res) => {
 
 router.post("/login", async (req,res) => {
     const {email, password} =req.body;
+     console.log("Login Request Body:", req.body);
     try {
         //Find the user by email
         let user = await User.findOne( { email });

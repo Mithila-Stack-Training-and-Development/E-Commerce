@@ -130,10 +130,10 @@ const NewArrivals = () => {
 	};
 
 	const handleMouseMove = (e) => {
-		if (!isDragging) return;
-		const x = e.pageX - setCanScrollLeft.ref.current.offsetLeft;
+		if (!isDragging || !scrollRef.current) return;
+		const x = e.pageX -scrollRef.current.offsetLeft;
 		const walk = x - startX;
-		scrollRef.cuurent.scrollLeft = scrollLeft - walk;
+		scrollRef.current.scrollLeft = scrollLeft - walk;
 	};
 
 	const handleMouseUpOrLeave = (e) => {

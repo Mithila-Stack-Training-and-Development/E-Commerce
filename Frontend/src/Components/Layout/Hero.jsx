@@ -10,7 +10,7 @@ const Hero = () => {
 				alt="Summer"
 				className="w-full h-[400px] md:h-[600px] lg:h-[750px] object-cover"
 			/>
-			<div className="absolute inset-0 bg-black bg-opacity-5 flex items-center justify-center">
+			<div className="absolute inset-0 bg-black bg-opacity-5 flex items-center justify-center pointer-events-none">
 				<div className="text-center text-black p-6">
 					<h1 className="text-4xl md:text-9xl font-bold tracking-tighter uppercase mb-10">
 						Vacation <br /> Ready

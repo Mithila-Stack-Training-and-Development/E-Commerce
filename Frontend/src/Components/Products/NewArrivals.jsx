@@ -12,7 +12,7 @@ const NewArrivals = () => {
 	const [canScrollRight, setCanScrollRight] = useState(true);
 	const [canScrollLeft, setCanScrollLeft] = useState(false);
 
-	// const NewArrivals = [
+	
 	// 	{
 	// 		_id: "1",
 	// 		name: "Stylish Jacket",

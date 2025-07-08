@@ -15,26 +15,55 @@ export const fetchUsers = createAsyncThunk("admin/fetchUsers", async() => {
 
 //Add the create user action
 
-export const  addUser = createAsyncThunk(
-    "admin/addUser",
-    async (userData, { rejectWithValue }) => {
-        try{
-            const response = await axios.post(
-                `${import.meta.env.VITE_BACKEND_URL}/api/admin/users`,
-                userData,
-                {
-                    headers: {
-                        Authorization: `Bearer ${localStorage.getItem("userToken")}`,
-                    },
-                }
-            );
-            return response.data;
+
+
+//Add the create user action
+
+// export const  addUser = createAsyncThunk(
+//     "admin/addUser",
+//     async (userData, { rejectWithValue }) => {
+//         try{
+//             const response = await axios.post(
+//                 `${import.meta.env.VITE_BACKEND_URL}/api/admin/users`,
+//                 userData,
+//                 {
+//                     headers: {
+//                         Authorization: `Bearer ${localStorage.getItem("userToken")}`,
+//                     },
+//                 }
+//             );
+//             return response.data;
+//         }
+//         catch(error){
+//             return rejectWithValue(error.response.data);
+//         }
+//     }
+// );
+
+
+export const addUser = createAsyncThunk(
+  "admin/addUser",
+  async (userData, { rejectWithValue }) => {
+    try {
+      console.log("Sending userData:", userData); // ✅ Add this line
+      const response = await axios.post(
+        `${import.meta.env.VITE_BACKEND_URL}/api/admin/users`,
+        userData,
+        {
+          headers: {
+            Authorization: `Bearer ${localStorage.getItem("userToken")}`,
+            "Content-Type": "application/json", // optionally force
+          },
         }
-        catch(error){
-            return rejectWithValue(error.response.data);
-        }
+      );
+      return response.data;
+    } catch (error) {
+      console.error("Error response:", error.response.data); // ✅ Add this
+      return rejectWithValue(error.response.data);
     }
+  }
 );
+
 
 //Update user info 
 
@@ -106,7 +135,7 @@ const adminSlice = createSlice({
        })
        .addCase(addUser.pending, (state) => {
         state.loading = true;
-        state.user = null;
+        state.users = null;
        })
        .addCase(addUser.fulfilled, (state, action) => {
         state.loading = false;

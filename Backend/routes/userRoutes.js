@@ -10,7 +10,7 @@ const router = express.Router();
 //@access Public
 
 router.post("/register", async(req,res) => {
-    console.log("Register Request Body:", req.body); // 🔍 DEBUG
+    
 
     const {name, email, password} = req.body;
 

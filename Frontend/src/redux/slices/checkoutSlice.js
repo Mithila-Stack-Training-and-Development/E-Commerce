@@ -5,6 +5,8 @@ import axios from "axios";
 export const createCheckout = createAsyncThunk(
     "checkout/createCheckout",
     async(checkoutdata, { rejectWithValue}) => {
+
+         console.log("Checkout payload being sent:", checkoutdata); // 👈 ADD THIS
         try {
             const response = await axios.post(
                 `${import.meta.env.VITE_BACKEND_URL}/api/checkout`,

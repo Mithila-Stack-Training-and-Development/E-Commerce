@@ -1,4 +1,4 @@
-// 
+
 
 
 import { useEffect, useState } from "react";
@@ -24,6 +24,8 @@ const ProductDetails = ({ productId }) => {
 		error,
 		similarProducts,
 	} = useSelector((state) => state.products);
+	// const [sizes, setSizes] = useState([]);
+
 	const { user, guestId } = useSelector((state) => state.auth);
 
 	/* -------------------------------------------------------------------- */
@@ -55,6 +57,10 @@ const ProductDetails = ({ productId }) => {
 			setMainImage(selectedProduct.images[0].url);
 		}
 	}, [selectedProduct]);
+
+	
+
+
 
 	/* -------------------------------------------------------------------- */
 	/*  Handlers                                                            */
@@ -194,29 +200,28 @@ const ProductDetails = ({ productId }) => {
 							</div>
 
 							{/* Size picker --------------------------------------------------- */}
-							<div className="mb-4">
+							 <div className="mb-4">
 								<p className="text-gray-700">Size:</p>
-								<div className="flex gap-2 mt-2">
-									{Array.isArray(selectedProduct.size) &&
-									selectedProduct.size.length > 0 ? (
-										selectedProduct.size.map((size) => (
-											<button
-												key={size}
-												onClick={() => setSelectedSize(size)}
-												className={`px-4 py-2 rounded border ${
-													selectedSize === size
-														? "bg-black text-white"
-														: ""
-												}`}
-											>
-												{size}
-											</button>
-										))
-									) : (
-										<p className="text-sm text-gray-500">
-											No sizes available
-										</p>
-									)}
+								 <div className="flex gap-2 mt-2">
+									
+
+									{Array.isArray(selectedProduct.sizes) &&
+selectedProduct.sizes.length > 0 ? (
+	selectedProduct.sizes.map((size) => (
+		<button
+			key={size}
+			onClick={() => setSelectedSize(size)}
+			className={`px-4 py-2 rounded border ${
+				selectedSize === size ? "bg-black text-white" : ""
+			}`}
+		>
+			{size}
+		</button>
+	))
+) : (
+	<p className="text-sm text-gray-500">No sizes available</p>
+)}
+
 								</div>
 							</div>
 

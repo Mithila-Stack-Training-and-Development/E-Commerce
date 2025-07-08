@@ -157,7 +157,7 @@ router.delete("/", async (req,res) => {
 
         if(productIndex > -1){
             cart.products.splice(productIndex, 1);
-            cart.totalPrice = cart.product.reduce(
+            cart.totalPrice = cart.products.reduce(
                 (acc,item) => acc + item.price * item.quantity, 0
             );
 

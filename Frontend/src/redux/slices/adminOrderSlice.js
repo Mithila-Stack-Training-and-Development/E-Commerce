@@ -117,7 +117,7 @@ const adminOrderSlice = createSlice({
         })
         // Delete Order 
         .addCase(delelteOrder.fulfilled, (state, action) => {
-            state.order = state.orders.filter(
+            state.orders = state.orders.filter(
                 (order) => order._id !== action.payload
             );
         });

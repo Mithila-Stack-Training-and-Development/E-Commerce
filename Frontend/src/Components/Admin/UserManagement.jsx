@@ -14,14 +14,14 @@ const UserManagement = () => {
    const { users, loading, error } = useSelector((state) => state.admin);
 
    useEffect(() => {
-    if(user & user.role !== "admin"){
+    if(user && user.role !== "admin"){
         navigate("/");
     }
    }, [user, navigate]);
 
 
    useEffect(() => {
-    if(user && user.role !== "admin"){
+    if(user && user.role === "admin"){
         dispatch(fetchUsers());
     }
    })
@@ -53,10 +53,24 @@ const UserManagement = () => {
         });
     };
 
-    const handleRoleChange = (userId, newRole) => {
-    dispatch(updateUser({id: userId, role: newRole}));
+    // const handleRoleChange = (userId, newRole) => {
+    // dispatch(updateUser({id: userId, role: newRole}));
         
-    };
+    // };
+
+    const handleRoleChange = (userId, newRole) => {
+  const targetUser = users.find((u) => u._id === userId);
+
+  if (targetUser) {
+    dispatch(updateUser({
+      id: userId,
+      name: targetUser.name,
+      email: targetUser.email,
+      role: newRole,
+    }));
+  }
+};
+
 
     const handleDeleteUser = (userId) => {
         if(window.confirm("Are you sure you want to delete this user?")){

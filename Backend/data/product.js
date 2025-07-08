@@ -16,7 +16,7 @@ const products = [
     gender: "Men",
     images: [
       {
-        url: "https://picsum.photos/500/500?random=39",
+        url: "https://plus.unsplash.com/premium_photo-1661627681947-4431c8c97659?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
         altText: "Classic Oxford Button-Down Shirt Front View",
       },
       {
@@ -44,11 +44,11 @@ const products = [
     gender: "Men",
     images: [
       {
-        url: "https://picsum.photos/500/500?random=41",
+        url: "https://images.pexels.com/photos/32877667/pexels-photo-32877667.jpeg",
         altText: "Slim-Fit Stretch Shirt Front View",
       },
       {
-        url: "https://picsum.photos/500/500?random=42",
+        url: "https://images.pexels.com/photos/32877669/pexels-photo-32877669.jpeg",
         altText: "Slim-Fit Stretch Shirt Back View",
       },
     ],
@@ -72,73 +72,18 @@ const products = [
     gender: "Men",
     images: [
       {
-        url: "https://picsum.photos/500/500?random=43",
+        url: "https://images.pexels.com/photos/17395505/pexels-photo-17395505.jpeg",
         altText: "Casual Denim Shirt Front View",
       },
       {
-        url: "https://picsum.photos/500/500?random=44",
+        url:"https://images.pexels.com/photos/17395505/pexels-photo-17395505.jpeg",
         altText: "Casual Denim Shirt Back View",
       },
     ],
     rating: 4.6,
     numReviews: 8,
   },
-  {
-    name: "Printed Resort Shirt",
-    description:
-      "Designed for summer, this printed resort shirt is perfect for vacation or weekend getaways. It features a relaxed fit, short sleeves, and a camp collar. The all-over tropical print adds a playful vibe.",
-    price: 29.99,
-    discountPrice: 22.99,
-    countInStock: 25,
-    sku: "PRNT-RES-004",
-    category: "Top Wear",
-    brand: "Beach Breeze",
-    sizes: ["S", "M", "L", "XL"],
-    colors: ["Tropical Print", "Navy Palms"],
-    collections: "Vacation Wear",
-    material: "Viscose",
-    gender: "Men",
-    images: [
-      {
-        url: "https://picsum.photos/500/500?random=45",
-        altText: "Printed Resort Shirt Front View",
-      },
-      {
-        url: "https://picsum.photos/500/500?random=1",
-        altText: "Printed Resort Shirt Back View",
-      },
-    ],
-    rating: 4.4,
-    numReviews: 10,
-  },
-  {
-    name: "Slim-Fit Easy-Iron Shirt",
-    description:
-      "A slim-fit, easy-iron shirt in woven cotton fabric with a fitted silhouette. Features a turn-down collar, classic button placket, and a yoke at the back. Long sleeves and adjustable button cuffs with a rounded hem.",
-    price: 34.99,
-    discountPrice: 29.99,
-    countInStock: 30,
-    sku: "SLIM-EIR-005",
-    category: "Top Wear",
-    brand: "Urban Chic",
-    sizes: ["S", "M", "L", "XL"],
-    colors: ["White", "Gray"],
-    collections: "Business Wear",
-    material: "Cotton",
-    gender: "Men",
-    images: [
-      {
-        url: "https://picsum.photos/500/500?random=47",
-        altText: "Slim-Fit Easy-Iron Shirt Front View",
-      },
-      {
-        url: "https://picsum.photos/500/500?random=2",
-        altText: "Slim-Fit Easy-Iron Shirt Front View",
-      },
-    ],
-    rating: 5,
-    numReviews: 14,
-  },
+  
   {
     name: "Polo T-Shirt with Ribbed Collar",
     description:
@@ -156,11 +101,11 @@ const products = [
     gender: "Men",
     images: [
       {
-        url: "https://picsum.photos/500/500?random=3",
+        url: "https://images.pexels.com/photos/26892209/pexels-photo-26892209.jpeg",
         altText: "Polo T-Shirt Front View",
       },
       {
-        url: "https://picsum.photos/500/500?random=4",
+        url: "https://images.pexels.com/photos/26892209/pexels-photo-26892209.jpeg",
         altText: "Polo T-Shirt Back View",
       },
     ],
@@ -184,7 +129,7 @@ const products = [
     gender: "Men",
     images: [
       {
-        url: "https://picsum.photos/500/500?random=5",
+        url: "https://images.pexels.com/photos/32886511/pexels-photo-32886511.jpeg",
         altText: "Oversized Graphic T-Shirt Front View",
       },
     ],
@@ -208,7 +153,7 @@ const products = [
     gender: "Men",
     images: [
       {
-        url: "https://picsum.photos/500/500?random=6",
+        url: "https://images.pexels.com/photos/32414872/pexels-photo-32414872.jpeg",
         altText: "Regular-Fit Henley Shirt Front View",
       },
     ],
@@ -232,7 +177,7 @@ const products = [
     gender: "Men",
     images: [
       {
-        url: "https://picsum.photos/500/500?random=7",
+        url: "https://images.pexels.com/photos/13926728/pexels-photo-13926728.jpeg",
         altText: "Long-Sleeve Thermal Tee Front View",
       },
     ],
@@ -256,7 +201,7 @@ const products = [
     gender: "Men",
     images: [
       {
-        url: "https://picsum.photos/500/500?random=8",
+        url: "https://images.pexels.com/photos/914496/pexels-photo-914496.jpeg",
         altText: "V-Neck Classic T-Shirt Front View",
       },
     ],
@@ -280,7 +225,7 @@ const products = [
     gender: "Men",
     images: [
       {
-        url: "https://picsum.photos/500/500?random=9",
+        url: "https://images.pexels.com/photos/9775758/pexels-photo-9775758.jpeg",
         altText: "Slim Fit Joggers Front View",
       },
     ],
@@ -304,7 +249,7 @@ const products = [
     gender: "Men",
     images: [
       {
-        url: "https://picsum.photos/500/500?random=10",
+        url: "https://images.pexels.com/photos/5319371/pexels-photo-5319371.jpeg",
         altText: "Cargo Joggers Front View",
       },
     ],
@@ -328,7 +273,7 @@ const products = [
     gender: "Men",
     images: [
       {
-        url: "https://picsum.photos/500/500?random=11",
+        url: "https://images.pexels.com/photos/32853846/pexels-photo-32853846.jpeg",
         altText: "Tapered Sweatpants Front View",
       },
     ],
@@ -352,7 +297,7 @@ const products = [
     gender: "Men",
     images: [
       {
-        url: "https://picsum.photos/500/500?random=12",
+        url: "https://images.pexels.com/photos/32872368/pexels-photo-32872368.jpeg",
         altText: "Denim Jeans Front View",
       },
     ],
@@ -376,7 +321,7 @@ const products = [
     gender: "Men",
     images: [
       {
-        url: "https://picsum.photos/500/500?random=13",
+        url: "https://images.pexels.com/photos/32860818/pexels-photo-32860818.jpeg",
         altText: "Chino Pants Front View",
       },
     ],
@@ -400,7 +345,7 @@ const products = [
     gender: "Men",
     images: [
       {
-        url: "https://picsum.photos/500/500?random=14",
+        url: "https://images.pexels.com/photos/32807583/pexels-photo-32807583.jpeg",
         altText: "Track Pants Front View",
       },
     ],
@@ -424,7 +369,7 @@ const products = [
     gender: "Men",
     images: [
       {
-        url: "https://picsum.photos/500/500?random=15",
+        url: "https://images.pexels.com/photos/6311478/pexels-photo-6311478.jpeg",
         altText: "Slim Fit Trousers Front View",
       },
     ],
@@ -448,38 +393,14 @@ const products = [
     gender: "Men",
     images: [
       {
-        url: "https://picsum.photos/500/500?random=16",
+        url: "https://images.pexels.com/photos/20153995/pexels-photo-20153995.jpeg",
         altText: "Cargo Pants Front View",
       },
     ],
     rating: 4.5,
     numReviews: 13,
   },
-  {
-    name: "Relaxed Fit Sweatpants",
-    description:
-      "Relaxed-fit sweatpants made from soft fleece fabric. Features an elastic waist and adjustable drawstring for a custom fit.",
-    price: 35,
-    discountPrice: 30,
-    countInStock: 35,
-    sku: "BW-009",
-    category: "Bottom Wear",
-    brand: "LoungeWear",
-    sizes: ["S", "M", "L", "XL"],
-    colors: ["Gray", "Black", "Navy"],
-    collections: "Lounge Collection",
-    material: "Fleece",
-    gender: "Men",
-    images: [
-      {
-        url: "https://picsum.photos/500/500?random=17",
-        altText: "Relaxed Fit Sweatpants Front View",
-      },
-    ],
-    rating: 4.3,
-    numReviews: 14,
-  },
-  {
+    {
     name: "Formal Dress Pants",
     description:
       "Classic formal dress pants with a slim fit. Made from lightweight, wrinkle-resistant fabric for a polished look at the office or formal events.",
@@ -496,7 +417,7 @@ const products = [
     gender: "Men",
     images: [
       {
-        url: "https://picsum.photos/500/500?random=18",
+        url: "https://images.pexels.com/photos/1760900/pexels-photo-1760900.jpeg",
         altText: "Formal Dress Pants Front View",
       },
     ],
@@ -520,7 +441,7 @@ const products = [
     gender: "Women",
     images: [
       {
-        url: "https://picsum.photos/500/500?random=19",
+        url: "https://images.pexels.com/photos/32873787/pexels-photo-32873787.jpeg",
         altText: "High-Waist Skinny Jeans",
       },
     ],
@@ -544,7 +465,7 @@ const products = [
     gender: "Women",
     images: [
       {
-        url: "https://picsum.photos/500/500?random=20",
+        url: "https://images.pexels.com/photos/1006991/pexels-photo-1006991.jpeg",
         altText: "Wide-Leg Trousers Front View",
       },
     ],
@@ -568,7 +489,7 @@ const products = [
     gender: "Women",
     images: [
       {
-        url: "https://picsum.photos/500/500?random=21",
+        url:"https://images.pexels.com/photos/9330639/pexels-photo-9330639.jpeg",
         altText: "Stretch Leggings Front View",
       },
     ],
@@ -592,7 +513,7 @@ const products = [
     gender: "Women",
     images: [
       {
-        url: "https://picsum.photos/500/500?random=22",
+        url: "https://images.pexels.com/photos/1684079/pexels-photo-1684079.jpeg",
         altText: "Pleated Midi Skirt Front View",
       },
     ],
@@ -616,61 +537,15 @@ const products = [
     gender: "Women",
     images: [
       {
-        url: "https://picsum.photos/500/500?random=23",
+        url: "https://images.pexels.com/photos/16354625/pexels-photo-16354625.jpeg",
         altText: "Flared Palazzo Pants Front View",
       },
     ],
     rating: 4.4,
     numReviews: 22,
   },
-  {
-    name: "High-Rise Joggers",
-    description:
-      "Comfortable high-rise joggers with an elastic waistband and drawstring for a perfect fit. Great for lounging or working out.",
-    price: 40,
-    discountPrice: 35,
-    countInStock: 30,
-    sku: "BW-W-006",
-    category: "Bottom Wear",
-    brand: "ActiveWear",
-    sizes: ["XS", "S", "M", "L"],
-    colors: ["Black", "Gray", "Pink"],
-    collections: "Loungewear Collection",
-    material: "Cotton Blend",
-    gender: "Women",
-    images: [
-      {
-        url: "https://picsum.photos/500/500?random=24",
-        altText: "High-Rise Joggers Front View",
-      },
-    ],
-    rating: 4.3,
-    numReviews: 25,
-  },
-  {
-    name: "Paperbag Waist Shorts",
-    description:
-      "Stylish paperbag waist shorts with a belted waist and wide legs. Perfect for summer outings and keeping cool in style.",
-    price: 35,
-    discountPrice: 30,
-    countInStock: 20,
-    sku: "BW-W-007",
-    category: "Bottom Wear",
-    brand: "SunnyStyle",
-    sizes: ["S", "M", "L"],
-    colors: ["White", "Khaki", "Blue"],
-    collections: "Summer Collection",
-    material: "Cotton",
-    gender: "Women",
-    images: [
-      {
-        url: "https://picsum.photos/500/500?random=25",
-        altText: "Paperbag Waist Shorts Front View",
-      },
-    ],
-    rating: 4.5,
-    numReviews: 19,
-  },
+  
+  
   {
     name: "Stretch Denim Shorts",
     description:
@@ -688,7 +563,7 @@ const products = [
     gender: "Women",
     images: [
       {
-        url: "https://picsum.photos/500/500?random=26",
+        url: "https://images.pexels.com/photos/32847124/pexels-photo-32847124.jpeg",
         altText: "Stretch Denim Shorts Front View",
       },
     ],
@@ -712,7 +587,7 @@ const products = [
     gender: "Women",
     images: [
       {
-        url: "https://picsum.photos/500/500?random=27",
+        url: "https://images.pexels.com/photos/32847124/pexels-photo-32847124.jpeg",
         altText: "Culottes Front View",
       },
     ],
@@ -720,7 +595,7 @@ const products = [
     numReviews: 23,
   },
   {
-    name: "Classic Pleated Trousers",
+    name: "Lehnga",
     description:
       "Timeless pleated trousers with a tailored fit. A wardrobe essential for workwear or formal occasions.",
     price: 70,
@@ -736,8 +611,8 @@ const products = [
     gender: "Women",
     images: [
       {
-        url: "https://picsum.photos/500/500?random=28",
-        altText: "Classic Pleated Trousers Front View",
+        url: "https://images.pexels.com/photos/1139450/pexels-photo-1139450.jpeg",
+        altText: "Lehnga",
       },
     ],
     rating: 4.8,
@@ -760,7 +635,7 @@ const products = [
     gender: "Women",
     images: [
       {
-        url: "https://picsum.photos/500/500?random=29",
+        url: "https://images.pexels.com/photos/10019048/pexels-photo-10019048.jpeg",
         altText: "Knitted Cropped Top",
       },
     ],
@@ -784,7 +659,7 @@ const products = [
     gender: "Women",
     images: [
       {
-        url: "https://picsum.photos/500/500?random=30",
+        url: "https://images.pexels.com/photos/19015925/pexels-photo-19015925.jpeg",
         altText: "Boho Floral Blouse",
       },
     ],
@@ -792,7 +667,7 @@ const products = [
     numReviews: 20,
   },
   {
-    name: "Casual T-Shirt",
+    name: "Suit Salwar",
     description:
       "A soft, breathable casual t-shirt with a classic fit. Features a round neckline and short sleeves, perfect for everyday wear.",
     price: 25,
@@ -808,15 +683,15 @@ const products = [
     gender: "Women",
     images: [
       {
-        url: "https://picsum.photos/500/500?random=31",
-        altText: "Casual T-Shirt",
+        url: "https://images.pexels.com/photos/20777205/pexels-photo-20777205.jpeg",
+        altText: "Suit Salwar",
       },
     ],
     rating: 4.5,
     numReviews: 25,
   },
   {
-    name: "Off-Shoulder Top",
+    name: "Wedding Lehnga",
     description:
       "An elegant off-shoulder top with ruffled sleeves and a flattering fit. Ideal for adding a touch of femininity to your outfit.",
     price: 45,
@@ -832,15 +707,15 @@ const products = [
     gender: "Women",
     images: [
       {
-        url: "https://picsum.photos/500/500?random=32",
-        altText: "Off-Shoulder Top",
+        url: "https://images.pexels.com/photos/32879257/pexels-photo-32879257.jpeg",
+        altText: "Wedding Lehnga",
       },
     ],
     rating: 4.7,
     numReviews: 18,
   },
   {
-    name: "Lace-Trimmed Cami Top",
+    name: "Suit",
     description:
       "A delicate cami top with lace trim and adjustable straps. The lightweight fabric makes it perfect for layering or wearing alone during warmer weather.",
     price: 35,
@@ -856,15 +731,15 @@ const products = [
     gender: "Women",
     images: [
       {
-        url: "https://picsum.photos/500/500?random=33",
-        altText: "Lace-Trimmed Cami Top",
+        url: "https://images.pexels.com/photos/17590575/pexels-photo-17590575.jpeg",
+        altText: "Suit",
       },
     ],
     rating: 4.8,
     numReviews: 22,
   },
   {
-    name: "Graphic Print Tee",
+    name: "Saree",
     description:
       "A trendy graphic print tee with a relaxed fit. Pair it with jeans or skirts for a cool and casual look.",
     price: 30,
@@ -880,15 +755,15 @@ const products = [
     gender: "Women",
     images: [
       {
-        url: "https://picsum.photos/500/500?random=34",
-        altText: "Graphic Print Tee",
+        url: "https://images.pexels.com/photos/28943466/pexels-photo-28943466.jpeg",
+        altText: "Saree",
       },
     ],
     rating: 4.6,
     numReviews: 30,
   },
   {
-    name: "Ribbed Long-Sleeve Top",
+    name: "Ribbed Dress",
     description:
       "A cozy ribbed long-sleeve top that offers comfort and style. Perfect for layering during cooler months.",
     price: 55,
@@ -904,85 +779,13 @@ const products = [
     gender: "Women",
     images: [
       {
-        url: "https://picsum.photos/500/500?random=35",
-        altText: "Ribbed Long-Sleeve Top",
+        url: "https://images.pexels.com/photos/32896723/pexels-photo-32896723.jpeg",
+        altText: "Ribbed Dress",
       },
     ],
     rating: 4.7,
     numReviews: 26,
   },
-  {
-    name: "Ruffle-Sleeve Blouse",
-    description:
-      "A lightweight ruffle-sleeve blouse with a flattering fit. Perfect for a feminine touch to any outfit.",
-    price: 45,
-    discountPrice: 40,
-    countInStock: 20,
-    sku: "TW-W-008",
-    category: "Top Wear",
-    brand: "FeminineWear",
-    sizes: ["S", "M", "L"],
-    colors: ["White", "Navy", "Lavender"],
-    collections: "Summer Collection",
-    material: "Viscose",
-    gender: "Women",
-    images: [
-      {
-        url: "https://picsum.photos/500/500?random=36",
-        altText: "Ruffle-Sleeve Blouse",
-      },
-    ],
-    rating: 4.5,
-    numReviews: 19,
-  },
-  {
-    name: "Classic Button-Up Shirt",
-    description:
-      "A versatile button-up shirt that can be dressed up or down. Made from soft fabric with a tailored fit, it's perfect for both casual and formal occasions.",
-    price: 60,
-    discountPrice: 55,
-    countInStock: 25,
-    sku: "TW-W-009",
-    category: "Top Wear",
-    brand: "ClassicStyle",
-    sizes: ["S", "M", "L", "XL"],
-    colors: ["White", "Light Blue", "Black"],
-    collections: "Office Collection",
-    material: "Cotton",
-    gender: "Women",
-    images: [
-      {
-        url: "https://picsum.photos/500/500?random=37",
-        altText: "Classic Button-Up Shirt",
-      },
-    ],
-    rating: 4.8,
-    numReviews: 25,
-  },
-  {
-    name: "V-Neck Wrap Top",
-    description:
-      "A chic v-neck wrap top with a tie waist. Its elegant style makes it perfect for both casual and semi-formal occasions.",
-    price: 50,
-    discountPrice: 45,
-    countInStock: 30,
-    sku: "TW-W-010",
-    category: "Top Wear",
-    brand: "ChicWrap",
-    sizes: ["S", "M", "L"],
-    colors: ["Red", "Black", "White"],
-    collections: "Evening Collection",
-    material: "Polyester",
-    gender: "Women",
-    images: [
-      {
-        url: "https://picsum.photos/500/500?random=38",
-        altText: "V-Neck Wrap Top",
-      },
-    ],
-    rating: 4.7,
-    numReviews: 22,
-  },
-];
+  ];
 
 module.exports = products;

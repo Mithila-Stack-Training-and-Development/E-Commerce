@@ -49,7 +49,7 @@ const OrderManagement = () => {
 									<td className="py-4 px-4 font-medium text-gray-900 whitespace-nowrap">
 										#{order._id}
 									</td>
-									<td className="p-4">{order.user.name}</td>
+									<td className="p-4">{order.user?.name|| "Unknown User"}</td>
 									<td className="p-4">{order.totalPrice}</td>
 									<td className="p-4">
 										<select

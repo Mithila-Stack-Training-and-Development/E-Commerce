@@ -7,6 +7,8 @@ import ProductGrid from "../Components/Products/ProductGrid";
 import FeaturedCollection from "../Components/Products/FeaturedCollection";
 import FeaturesSection from "../Components/Products/FeaturesSection";
 
+
+
 const placeholderProducts = [
   	{
 		_id: 1,
